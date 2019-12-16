@@ -6,8 +6,10 @@ var morgan = require('morgan');
 var bodyParser = require('body-parser');
 var methodOverride = require('method-override');
 var mongoose = require('mongoose');
+require('dotenv').config();
 
-mongoose.connect('mongodb://localhost/meanstacktutorials');
+
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/todo-debo');
 
 
 var port = process.env.PORT || 8000;
