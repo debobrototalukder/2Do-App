@@ -216,6 +216,11 @@ transition:
 .card:hover {
   transform: translateY(-20px);
   transition: 0.4s ease-out;
+  background-image: url('../images/download.png');
+  background-size: 50px 35px;
+  bottom: 0;
+  background-repeat: no-repeat;
+  background-position: 150px 10px;
 }
 
 .card:hover ~ .card {
