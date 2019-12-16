@@ -7,7 +7,7 @@ var bodyParser = require('body-parser');
 var methodOverride = require('method-override');
 var mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost/meanstacktutorials');
+mongoose.connect('mongodb://todo-debo.herokuapp.com/meanstacktutorials');
 
 
 var port = process.env.PORT || 8000;
