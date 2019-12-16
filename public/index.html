@@ -1,0 +1,64 @@
+<html>
+    <html ng-app="Todo">
+    <head>
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>2Do - Organize</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+    </head>
+
+
+<body ng-controller="mainController">
+    <h1 class="title-app">
+    <i class="fas fa-list-alt" style="font-size:50px;"></i>
+            2Do - Organize your work</h1>
+            <h1 style="text-align:center;color:white;font-family: 'Montserrat', sans-serif;">Tasks : {{ todos.length }}</h1>
+
+
+
+    <div class="container">
+        <div class="card" ng-repeat="todo in todos" ng-click="deleteTodo(todo._id)">
+        <h3 class="title">{{ todo.text }}</h3>
+        <div class="bar">
+            <div class="emptybar"></div>
+            <div class="filledbar"></div>
+        </div>
+        <div class="circle">
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg">
+            <circle class="stroke" cx="60" cy="60" r="50"/>
+        </svg>
+        </div>
+        </div>
+        <p class="text-center" ng-show="loading">
+            <span class="fa fa-spinner fa-spin fa-3x"></span>
+        </p>
+    </div>
+
+
+    <div id="footer">
+            <form>
+                <div class="Input">
+
+                    <input type="text" id="input" class="Input-text" placeholder="Enter Task" ng-model="formData.text" autocomplete="off">
+                    <label for="input" class="Input-label">Task</label>
+
+                </div>
+
+                <button type="submit" class="button" ng-click="createTodo()"><span>Add </span></button>
+            </form>
+    </div>
+
+    
+<script src="https://kit.fontawesome.com/31bacedc41.js" crossorigin="anonymous"></script>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script>
+<script src="controllers/main.js"></script>
+<script src="services/todos.js"></script>
+<script src="run.js"></script>
+</body>
+</html>
